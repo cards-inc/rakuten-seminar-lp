@@ -867,12 +867,17 @@
       btn.disabled = true;
       btn.textContent = '送信中...';
 
-      const formData = new FormData(form);
+      const formData = new URLSearchParams();
+      for (const [key, value] of new FormData(form)) {
+        formData.append(key, value);
+      }
       formData.set('consent', form.querySelector('[name="consent"]').checked ? 'on' : '');
 
       fetch(GAS_URL, {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString(),
+        mode: 'no-cors',
       })
       .then(() => {
         form.innerHTML = '<div style="text-align:center;padding:40px 0;"><h3 style="color:#1a2744;margin-bottom:16px;">お申し込みありがとうございます</h3><p style="color:#555;line-height:1.8;">ご登録のメールアドレスにZoomのURLをお送りしました。<br>開催前日・当日にもリマインドメールをお届けします。</p></div>';

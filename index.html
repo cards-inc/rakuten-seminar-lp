@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>楽天市場イベント完全攻略セミナー｜株式会社CARDS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --blue: #2B5EA7;
+      --blue-dark: #1E4A8A;
+      --blue-light: #3A7BD5;
+      --navy: #1a2744;
+      --text: #222;
+      --text-light: #555;
+      --white: #ffffff;
+      --bg-light: #f0f4f8;
+      --accent: #E8B500;
+      --red: #c0392b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', -apple-system, sans-serif;
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.8;
+      background: var(--white);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #ddd;
+    }
+    .header-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo img { height: 28px; width: auto; }
+    .header-nav { display: flex; gap: 20px; align-items: center; }
+    .header-nav a {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .header-cta {
+      background: var(--blue);
+      color: #fff !important;
+      padding: 10px 24px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .header-cta:hover { background: var(--blue-dark); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: var(--white);
+    }
+    .hero-banner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 24px 0;
+    }
+    .hero-banner img { width: 100%; border-radius: 6px; }
+    .hero-bottom {
+      background: var(--bg-light);
+      padding: 24px 24px;
+      margin-top: 28px;
+    }
+    .hero-bottom-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 16px 32px;
+    }
+    .hero-info-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--navy);
+      font-size: 0.92rem;
+    }
+    .hero-info-tag .tag-label {
+      background: var(--blue);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .hero-info-tag .tag-value {
+      font-weight: 700;
+    }
+    .hero-cta-wrap {
+      background: var(--navy);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .btn-cta {
+      display: inline-block;
+      background: #FF6B2B;
+      color: #fff;
+      font-size: 1.15rem;
+      font-weight: 900;
+      padding: 20px 60px;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(255,107,43,0.35);
+      letter-spacing: 0.03em;
+    }
+    .btn-cta:hover {
+      background: #E55A1B;
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(255,107,43,0.45);
+    }
+    .btn-cta small {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+    .btn-cta-blue {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 16px 48px;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(43,94,167,0.3);
+    }
+    .btn-cta-blue:hover {
+      background: var(--blue-dark);
+      transform: translateY(-2px);
+    }
+    .btn-cta-blue small {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      margin-top: 4px;
+      opacity: 0.8;
+    }
+
+    /* ===== CONTENT WRAPPER ===== */
+    .content-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 3.6vw, 3rem);
+    }
+
+    /* ===== SECTION ===== */
+    .section { padding: 64px 0; }
+    .section-blue {
+      background: var(--bg-light);
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-title h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2rem);
+      font-weight: 900;
+      color: var(--navy);
+      position: relative;
+      display: inline-block;
+    }
+    .section-title h2::after {
+      content: '';
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--blue);
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ===== TARGET ===== */
+    .target-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .target-list li {
+      background: var(--white);
+      padding: 20px 28px 20px 56px;
+      border-radius: 6px;
+      font-size: 1.05rem;
+      font-weight: 500;
+      position: relative;
+      border: 1px solid #dde4ed;
+      line-height: 1.7;
+    }
+    .target-list li::before {
+      content: '\2713';
+      position: absolute;
+      left: 20px;
+      top: 18px;
+      color: var(--blue);
+      font-weight: 900;
+      font-size: 1rem;
+    }
+    .highlight {
+      background: linear-gradient(transparent 60%, #FDE68A 60%);
+      font-weight: 700;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-text {
+      font-size: 1.08rem;
+      line-height: 2.2;
+      color: var(--text);
+      text-align: center;
+    }
+    .about-text strong { font-weight: 700; color: var(--navy); }
+    /* (badge removed) */
+
+    /* ===== LEARN ===== */
+    .learn-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .learn-item {
+      padding: 28px 32px;
+      background: var(--white);
+      border-radius: 8px;
+      border-left: 5px solid var(--blue);
+      border: 1px solid #dde4ed;
+      border-left: 5px solid var(--blue);
+    }
+    .learn-item .learn-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--blue);
+      display: inline-block;
+      padding: 2px 12px;
+      border-radius: 3px;
+      margin-bottom: 10px;
+      letter-spacing: 0.08em;
+    }
+    .learn-item h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+    .learn-item h3 .text-accent {
+      color: var(--red);
+      font-weight: 900;
+    }
+    .learn-item p {
+      font-size: 0.98rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: var(--navy);
+      text-align: center;
+      padding: 48px 24px;
+    }
+    .cta-banner p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+    }
+
+    /* ===== BENEFIT ===== */
+    .benefit-box {
+      background: var(--white);
+      border: 3px solid var(--blue);
+      border-radius: 12px;
+      padding: 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .benefit-header {
+      background: var(--blue);
+      color: #fff;
+      padding: 14px 24px;
+    }
+    .benefit-header .benefit-label {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 3px;
+      margin-bottom: 8px;
+    }
+    .benefit-header h3 {
+      font-size: clamp(1.4rem, 3.5vw, 1.9rem);
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0;
+    }
+    .benefit-body {
+      padding: 32px 36px;
+    }
+    .benefit-body p {
+      font-size: 1.02rem;
+      line-height: 2;
+      color: var(--text-light);
+    }
+    .benefit-body p strong { color: var(--navy); }
+    .benefit-items {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-light);
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .benefit-item svg { width: 20px; height: 20px; fill: var(--blue); flex-shrink: 0; }
+
+    /* ===== OVERVIEW ===== */
+    .overview-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+    .overview-table tr { border-bottom: 1px solid #dde4ed; }
+    .overview-table tr:last-child { border-bottom: none; }
+    .overview-table th {
+      text-align: left;
+      padding: 16px 16px 16px 0;
+      font-weight: 700;
+      color: var(--navy);
+      width: 120px;
+      vertical-align: top;
+      white-space: nowrap;
+    }
+    .overview-table td {
+      padding: 16px 0;
+      line-height: 1.9;
+    }
+    .overview-table .free {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.92rem;
+      padding: 3px 16px;
+      border-radius: 3px;
+    }
+    .caution-list {
+      list-style: none;
+      padding: 0;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 2;
+    }
+    .caution-list li::before { content: '※ '; }
+
+    /* ===== FORM ===== */
+    .form-section {
+      padding: 64px 0;
+    }
+    .form-section .section-title { margin-bottom: 32px; }
+    .form-wrap {
+      max-width: 540px;
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid #dde4ed;
+      border-radius: 10px;
+      padding: 40px 36px;
+    }
+    .form-group { margin-bottom: 18px; }
+    .form-group > label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--navy);
+    }
+    .form-group > label .required {
+      color: var(--red);
+      font-size: 0.78rem;
+      margin-left: 4px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #c5cdd8;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text);
+      background: #fff;
+      transition: border 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(43,94,167,0.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-date-select { display: flex; gap: 12px; }
+    .form-date-select label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      padding: 12px 20px;
+      border: 2px solid #dde4ed;
+      border-radius: 6px;
+      flex: 1;
+      justify-content: center;
+      transition: all 0.2s;
+      font-size: 0.92rem;
+    }
+    .form-date-select input[type="radio"] { accent-color: var(--blue); }
+    .form-date-select label:has(input:checked) {
+      border-color: var(--blue);
+      background: #f0f4ff;
+    }
+    .form-consent-box {
+      background: var(--bg-light);
+      padding: 16px 20px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: var(--text-light);
+      margin-bottom: 12px;
+    }
+    .form-consent-check {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.92rem;
+    }
+    .form-consent-check input {
+      accent-color: var(--blue);
+      width: 18px;
+      height: 18px;
+    }
+    .form-submit {
+      width: 100%;
+      background: var(--blue);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 17px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: inherit;
+      margin-top: 12px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(43,94,167,0.25);
+    }
+    .form-submit:hover {
+      background: var(--blue-dark);
+      transform: translateY(-1px);
+    }
+    .form-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 14px;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: var(--navy);
+      text-align: center;
+      padding: 24px;
+    }
+    .site-footer .logo { margin-bottom: 8px; }
+    .site-footer .logo img {
+      height: 20px;
+      margin: 0 auto;
+      filter: brightness(0) invert(1);
+    }
+    .site-footer p {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero-bottom-inner { flex-direction: column; gap: 10px; }
+      .section { padding: 48px 0; }
+      .learn-item { padding: 20px 20px; }
+      .benefit-box { padding: 36px 24px; }
+      .form-wrap { padding: 28px 20px; }
+      .form-date-select { flex-direction: column; }
+      .overview-table th { width: 90px; font-size: 0.85rem; }
+      .btn-cta { padding: 16px 36px; font-size: 1rem; }
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-40px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .slide-left.visible { opacity: 1; transform: translateX(0); }
+
+    .slide-right {
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .slide-right.visible { opacity: 1; transform: translateX(0); }
+
+    .scale-in {
+      opacity: 0;
+      transform: scale(0.92);
+      transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .scale-in.visible { opacity: 1; transform: scale(1); }
+
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .stagger.visible > *:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(2) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(3) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(4) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+    .stagger.visible > *:nth-child(5) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+    .btn-cta { animation: pulse 2.5s ease-in-out infinite; }
+    .btn-cta:hover { animation: none; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .benefit-box { animation: float 4s ease-in-out infinite; }
+    .benefit-box:hover { animation: none; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="https://cd-s.co.jp/" class="logo">
+        <img src="https://cd-s.co.jp/wp-content/themes/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEcards/assets/images/common/logo.webp" alt="株式会社CARDS">
+      </a>
+      <div class="header-nav">
+        <a href="https://cd-s.co.jp/company/">企業情報</a>
+        <a href="#entry" class="header-cta">無料で申し込む</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-banner">
+      <img src="banner.png" alt="楽天市場イベント完全攻略セミナー">
+    </div>
+    <div class="hero-bottom">
+      <div class="hero-bottom-inner">
+        <div class="hero-info-tag">
+          <span class="tag-label">開催日</span>
+          <span class="tag-value">第1回 4/16（木） ／ 第2回 4/23（木）18:30〜</span>
+        </div>
+        <div class="hero-info-tag">
+          <span class="tag-label">場所</span>
+          <span class="tag-value">オンライン（ZOOM）</span>
+        </div>
+        <div class="hero-info-tag">
+          <span class="tag-label">参加費</span>
+          <span class="tag-value" style="font-size:1.1rem;">無料</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-cta-wrap">
+      <a href="#entry" class="btn-cta">今すぐ無料で申し込む</a>
+    </div>
+  </section>
+
+  <!-- こんな方におすすめ -->
+  <section class="section section-blue fade-in">
+    <div class="content-wrap">
+      <div class="section-title"><h2>こんな方におすすめ</h2></div>
+      <ul class="target-list stagger">
+        <li>楽天市場に出店しているが、<span class="highlight">思うように売上が伸びない</span></li>
+        <li><span class="highlight">メーカー・D2Cブランド</span>で楽天に本格参入を検討している</li>
+        <li>イベント施策を打っているが、<span class="highlight">成果に繋がっていない</span></li>
+        <li><span class="highlight">モールごとに戦略を最適化</span>できていない</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- セミナーについて -->
+  <section class="section fade-in">
+    <div class="content-wrap">
+      <div class="section-title"><h2>セミナーについて</h2></div>
+      <div class="about-text">
+        <p>楽天市場、Amazonを始めとした<br><span class="highlight" style="font-size:1.15em;">ECモールの支援実績 累計200社超</span>の株式会社CARDSが、<br>現場で培ったノウハウをもとに<strong>「楽天で売れる仕組み」</strong>を体系的に解説します。</p>
+        <br>
+        <p>「何から手をつければいいかわからない」<br>「施策は打っているのに成果が出ない」<br><br>そんな課題を抱える事業者様に向けて、<br><span class="highlight">楽天市場での勝ちパターン</span>を網羅的にお伝えいたします。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- このセミナーで学べること -->
+  <section class="section section-blue fade-in">
+    <div class="content-wrap">
+      <div class="section-title"><h2>このセミナーで学べること</h2></div>
+      <div class="learn-list stagger">
+        <div class="learn-item">
+          <div class="learn-num">SESSION 01</div>
+          <h3>なぜ楽天は<span class="text-accent">イベント設計が命</span>なのか</h3>
+          <p>楽天市場特有のイベント構造を理解し、売上を最大化するための設計思想を解説します。</p>
+        </div>
+        <div class="learn-item">
+          <div class="learn-num">SESSION 02</div>
+          <h3>メーカー・D2Cブランドが<span class="text-accent">陥りやすい運営の落とし穴</span></h3>
+          <p>楽天市場と他モール運営の違い、よくある失敗パターンとその回避策をお伝えします。</p>
+        </div>
+        <div class="learn-item">
+          <div class="learn-num">SESSION 03</div>
+          <h3>実際に取り組んで<span class="text-accent">成果につながった</span>具体的な施策</h3>
+          <p>実際にCARDSが支援し、売上向上に成功した事例をもとに具体的な施策をご紹介します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA中間 -->
+  <div class="cta-banner">
+    <p>参加無料・オンライン開催・途中退出OK</p>
+    <a href="#entry" class="btn-cta">無料で申し込む<small>※ 所要時間約1分</small></a>
+  </div>
+
+  <!-- 参加特典 -->
+  <section class="section fade-in">
+    <div class="content-wrap">
+      <div class="benefit-box scale-in">
+        <div class="benefit-header">
+          <span class="benefit-label">参加者全員にプレゼント</span>
+          <h3>ページ設定状況 無料診断</h3>
+        </div>
+        <div class="benefit-body">
+          <p>経験豊富なメンバーが、あなたの楽天店舗を個別に診断いたします。</p>
+          <div class="benefit-items">
+            <div class="benefit-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              商品ページ
+            </div>
+            <div class="benefit-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              バナー
+            </div>
+            <div class="benefit-item">
+              <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+              キーワード設定
+            </div>
+          </div>
+          <p style="font-size:0.82rem; color:#999; margin-top:20px;">※ セミナー参加者限定の特典です</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 開催概要 -->
+  <section class="section section-blue fade-in">
+    <div class="content-wrap">
+      <div class="section-title"><h2>開催概要</h2></div>
+      <table class="overview-table">
+        <tr>
+          <th>セミナー名</th>
+          <td>楽天市場イベント完全攻略セミナー<br>〜楽天市場の勝てる運用を学ぶ〜</td>
+        </tr>
+        <tr>
+          <th>主催</th>
+          <td>株式会社CARDS</td>
+        </tr>
+        <tr>
+          <th>日時</th>
+          <td>
+            第1回：2026年4月16日（木）18:30〜<br>
+            第2回：2026年4月23日（木）18:30〜<br>
+            <span style="font-size:0.82rem; color:var(--text-light);">※ 全2回開催・内容は同じです。ご都合の良い日程をお選びください。</span>
+          </td>
+        </tr>
+        <tr>
+          <th>開催方法</th>
+          <td>オンライン（Zoom）</td>
+        </tr>
+        <tr>
+          <th>参加費</th>
+          <td><span class="free">無料</span></td>
+        </tr>
+        <tr>
+          <th>参加特典</th>
+          <td>ページ設定状況 無料診断（参加者全員）</td>
+        </tr>
+      </table>
+      <br>
+      <ul class="caution-list">
+        <li>同業他社様のご参加はお断りする場合がございます</li>
+        <li>セミナー内容は予告なく変更になる場合があります</li>
+        <li>お申込み後、開催前にZoomのURLをメールでお送りします</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <a href="#entry" class="btn-cta">今すぐ無料で申し込む</a>
+  </div>
+
+  <!-- 申し込みフォーム -->
+  <section class="section form-section section-blue" id="entry">
+    <div class="content-wrap">
+      <div class="section-title"><h2>参加申し込み</h2></div>
+      <div class="form-wrap">
+        <form id="seminar-form" onsubmit="return submitForm(event)">
+          <div class="form-group">
+            <label>参加日程<span class="required">*</span></label>
+            <div class="form-date-select">
+              <label>
+                <input type="radio" name="date" value="2026-04-16" required>
+                4/16（木）18:30〜
+              </label>
+              <label>
+                <input type="radio" name="date" value="2026-04-23">
+                4/23（木）18:30〜
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>会社名<span class="required">*</span></label>
+            <input type="text" name="company" placeholder="例）株式会社CARDS" required>
+          </div>
+          <div class="form-group">
+            <label>お名前<span class="required">*</span></label>
+            <input type="text" name="name" placeholder="例）田中 太郎" required>
+          </div>
+          <div class="form-group">
+            <label>メールアドレス<span class="required">*</span></label>
+            <input type="email" name="email" placeholder="例）info@example.com" required>
+          </div>
+          <div class="form-group">
+            <label>電話番号</label>
+            <input type="tel" name="phone" placeholder="例）03-1234-5678">
+          </div>
+          <div class="form-group">
+            <label>楽天市場の店舗URL</label>
+            <input type="url" name="shop_url" placeholder="例）https://www.rakuten.co.jp/your-shop/">
+          </div>
+          <div class="form-group">
+            <label>備考・ご質問</label>
+            <textarea name="message" placeholder="ご質問やお知らせ事項があればご記入ください"></textarea>
+          </div>
+          <div class="form-group">
+            <label>資料提供に関する同意<span class="required">*</span></label>
+            <div class="form-consent-box">
+              本資料は社内での参考目的のみに使用し、外部第三者への配布・転載・共有を行わないことに同意します。<br>
+              また、資料内容を転載・転送・再配布しないことを承諾します。
+            </div>
+            <label class="form-consent-check">
+              <input type="checkbox" name="consent" required>
+              同意します。
+            </label>
+          </div>
+          <button type="submit" class="form-submit" id="submit-btn">この内容で申し込む</button>
+          <p class="form-note">※ お申込み後、ご登録のメールアドレスにZoomのURLをお送りします</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="logo">
+      <img src="https://cd-s.co.jp/wp-content/themes/%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BEcards/assets/images/common/logo.webp" alt="CARDS">
+    </div>
+    <p>&copy; 2026 株式会社CARDS All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in, .stagger').forEach(el => observer.observe(el));
+
+    // Form submission to GAS
+    const GAS_URL = 'YOUR_GAS_DEPLOY_URL_HERE';
+
+    function submitForm(e) {
+      e.preventDefault();
+      const form = document.getElementById('seminar-form');
+      const btn = document.getElementById('submit-btn');
+
+      if (GAS_URL === 'YOUR_GAS_DEPLOY_URL_HERE') {
+        alert('フォームの送信先が未設定です。GASのデプロイURLを設定してください。');
+        return false;
+      }
+
+      btn.disabled = true;
+      btn.textContent = '送信中...';
+
+      const formData = new FormData(form);
+      formData.set('consent', form.querySelector('[name="consent"]').checked ? 'on' : '');
+
+      fetch(GAS_URL, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(() => {
+        form.innerHTML = '<div style="text-align:center;padding:40px 0;"><h3 style="color:#1a2744;margin-bottom:16px;">お申し込みありがとうございます</h3><p style="color:#555;line-height:1.8;">ご登録のメールアドレスにZoomのURLをお送りしました。<br>開催前日・当日にもリマインドメールをお届けします。</p></div>';
+      })
+      .catch(() => {
+        alert('送信に失敗しました。もう一度お試しください。');
+        btn.disabled = false;
+        btn.textContent = 'この内容で申し込む';
+      });
+
+      return false;
+    }
+  </script>
+
+</body>
+</html>

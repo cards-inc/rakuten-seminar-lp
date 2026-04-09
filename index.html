@@ -534,14 +534,23 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .hero-bottom-inner { flex-direction: column; gap: 10px; }
+      .hero-bottom { padding: 20px 16px; }
+      .hero-bottom-inner { flex-direction: column; gap: 12px; align-items: flex-start; }
+      .hero-info-tag { font-size: 0.85rem; }
+      .hero-info-tag .tag-label { font-size: 0.68rem; padding: 3px 8px; flex-shrink: 0; }
+      .hero-info-tag .tag-value { font-size: 0.85rem; }
       .section { padding: 48px 0; }
       .learn-item { padding: 20px 20px; }
       .benefit-box { padding: 36px 24px; }
-      .form-wrap { padding: 28px 20px; }
-      .form-date-select { flex-direction: column; }
-      .overview-table th { width: 90px; font-size: 0.85rem; }
+      .form-wrap { padding: 28px 16px; }
+      .form-date-select { flex-direction: column; gap: 8px; }
+      .form-date-select label { padding: 14px 16px; font-size: 0.9rem; justify-content: flex-start; }
+      .form-group > label { font-size: 0.9rem; }
+      .form-group input, .form-group textarea { font-size: 1rem; padding: 14px 12px; }
+      .overview-table th { width: 80px; font-size: 0.82rem; }
+      .overview-table td { font-size: 0.88rem; }
       .btn-cta { padding: 16px 36px; font-size: 1rem; }
+      .content-wrap { padding: 0 16px; }
     }
 
     /* ===== ANIMATIONS ===== */
@@ -809,8 +818,8 @@
             <input type="tel" name="phone" placeholder="例）03-1234-5678" required>
           </div>
           <div class="form-group">
-            <label>チャットワークID<span class="required">*</span></label>
-            <input type="text" name="chatwork_id" placeholder="例）your_chatwork_id" required>
+            <label>チャットワークID<span style="font-size:0.75rem;font-weight:400;color:#999;margin-left:6px;">任意</span></label>
+            <input type="text" name="chatwork_id" placeholder="例）your_chatwork_id">
           </div>
           <div class="form-group">
             <label>楽天市場の店舗URL<span style="font-size:0.75rem;font-weight:400;color:#999;margin-left:6px;">任意</span></label>

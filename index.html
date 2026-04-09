@@ -778,7 +778,7 @@
     <div class="content-wrap">
       <div class="section-title"><h2>参加申し込み</h2></div>
       <div class="form-wrap">
-        <form id="seminar-form" onsubmit="return submitForm(event)">
+        <form id="seminar-form" action="https://script.google.com/macros/s/AKfycby94YdMfvwz-sk3Rq5YledjiLq1TfzXWvKorRh_oBHeyNaKPt2NXSPCXHuaksioF2Oj/exec" method="POST">
           <div class="form-group">
             <label>参加日程<span class="required">*</span></label>
             <div class="form-date-select">
@@ -827,6 +827,7 @@
               同意します。
             </label>
           </div>
+          <input type="hidden" name="consent_value" value="">
           <button type="submit" class="form-submit" id="submit-btn">この内容で申し込む</button>
           <p class="form-note">※ お申込み後、ご登録のメールアドレスにZoomのURLをお送りします</p>
         </form>
@@ -851,45 +852,14 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in, .slide-left, .slide-right, .scale-in, .stagger').forEach(el => observer.observe(el));
 
-    // Form submission to GAS
-    const GAS_URL = 'https://script.google.com/macros/s/AKfycby94YdMfvwz-sk3Rq5YledjiLq1TfzXWvKorRh_oBHeyNaKPt2NXSPCXHuaksioF2Oj/exec';
-
-    function submitForm(e) {
-      e.preventDefault();
-      const form = document.getElementById('seminar-form');
-      const btn = document.getElementById('submit-btn');
-
-      if (GAS_URL === 'YOUR_GAS_DEPLOY_URL_HERE') {
-        alert('フォームの送信先が未設定です。GASのデプロイURLを設定してください。');
-        return false;
-      }
-
+    // Form submit: set consent hidden field and show loading
+    document.getElementById('seminar-form').addEventListener('submit', function() {
+      var consent = this.querySelector('[name="consent"]');
+      this.querySelector('[name="consent_value"]').value = consent.checked ? 'on' : '';
+      var btn = document.getElementById('submit-btn');
       btn.disabled = true;
       btn.textContent = '送信中...';
-
-      const formData = new URLSearchParams();
-      for (const [key, value] of new FormData(form)) {
-        formData.append(key, value);
-      }
-      formData.set('consent', form.querySelector('[name="consent"]').checked ? 'on' : '');
-
-      fetch(GAS_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: formData.toString(),
-        mode: 'no-cors',
-      })
-      .then(() => {
-        form.innerHTML = '<div style="text-align:center;padding:40px 0;"><h3 style="color:#1a2744;margin-bottom:16px;">お申し込みありがとうございます</h3><p style="color:#555;line-height:1.8;">ご登録のメールアドレスにZoomのURLをお送りしました。<br>開催前日・当日にもリマインドメールをお届けします。</p></div>';
-      })
-      .catch(() => {
-        alert('送信に失敗しました。もう一度お試しください。');
-        btn.disabled = false;
-        btn.textContent = 'この内容で申し込む';
-      });
-
-      return false;
-    }
+    });
   </script>
 
 </body>
